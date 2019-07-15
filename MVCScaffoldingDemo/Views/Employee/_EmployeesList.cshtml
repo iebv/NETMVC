@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MVCScaffoldingDemo.Models.Employee>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoiningDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoiningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                <button type="button" class="btn btn-link" id="delete" data-request-url="@Url.Action("Delete", "Employee")" onclick="Delete(@item.ID)">Delete </button> |
+            </td>
+        </tr>
+    }
+
+</table>
+
+<style>
+    #delete {
+       outline: none !important;
+       box-shadow: none;
+       padding: 0 0 0 0;
+    }
+</style>
+
+@Scripts.Render("~/bundles/delete")
+
