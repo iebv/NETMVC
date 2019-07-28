@@ -1,6 +1,6 @@
 ﻿function Delete(id) {
     $.ajax({
-        type: "POST",
+        type: "DELETE",
         url: $("#delete").data("request-url"),
         data: {
 

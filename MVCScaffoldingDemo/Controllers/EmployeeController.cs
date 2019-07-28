@@ -95,8 +95,8 @@ namespace MVCScaffoldingDemo.Controllers
         }
 
         
-        // POST: Employees/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // DELETE: Employees/Delete/5
+        [HttpDelete, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int empId)
         {
