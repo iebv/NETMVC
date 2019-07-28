@@ -1,9 +1,8 @@
 ﻿function Delete(id) {
     $.ajax({
-        type: "DELETE",
         url: $("#delete").data("request-url"),
+        type: "DELETE",
         data: {
-
             empId: id
         },
         ContentType: "application/Json",
